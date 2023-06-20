@@ -8,7 +8,7 @@ require("dotenv").config()
 const app = express();
 const PORT = 3001;
 
-connectToMongoDB("mongodb://localhost:27017/redirectdb").then(() =>
+connectToMongoDB(process.env.MONGO_URI).then(() =>
   console.log("Mongodb connected")
 );
 

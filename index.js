@@ -4,6 +4,7 @@ const urlRoute = require("./routes/url");
 const URL = require("./models/url");
 const base62 = require("base62")
 require("dotenv").config()
+const cors = require("cors")
 
 const app = express();
 const PORT = 3001;

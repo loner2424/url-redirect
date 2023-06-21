@@ -11,7 +11,10 @@ const PORT = 3001;
 connectToMongoDB(process.env.MONGO_URI).then(() =>
   console.log("Mongodb connected")
 );
-
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
 app.use(express.json());
 
 app.use("/url", urlRoute);
